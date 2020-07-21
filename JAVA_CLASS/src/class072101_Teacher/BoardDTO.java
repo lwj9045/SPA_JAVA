@@ -4,20 +4,18 @@ public class BoardDTO {
 	private int bnumber;
 	private String title;
 	private String contents;
-	private String password;
+	private String password; 
 
-	public BoardDTO(int bnumber, String title, String contents, String password) {
+	public BoardDTO(int bnember, String title, String contents, String password) {
 		super();
 		this.bnumber = bnumber;
 		this.title = title;
 		this.contents = contents;
 		this.password = password;
 	}
-
-	public BoardDTO() {
-
+	BoardDTO(){
+		
 	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -50,10 +48,10 @@ public class BoardDTO {
 		this.bnumber = bnumber;
 	}
 
-	@Override
-	public String toString() {
-		return "BoardDTO [bnumber=" + bnumber + ", title=" + title + ", contents=" + contents + ", password=" + password
-				+ "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "BoardDTO [bnumber=" + bnumber + ", title=" + title + ", contents=" + contents + ", password=" + password
+//				+ "]";
+//	}
 
 }

@@ -28,10 +28,10 @@ public class BoardMain {
 				service.print(boardList); // 전체 글 출력
 				break;
 			case 3:
-				service.Modify(boardList); // 글 수정
+				boardList = service.Modify(boardList); // 글 수정
 				break;
 			case 4:
-				service.Delete(boardList); // 글 삭제
+				boardList = service.Delete(boardList); // 글 삭제
 				break;
 			case 5:
 				run = service.Down(); // 프로그램 종료

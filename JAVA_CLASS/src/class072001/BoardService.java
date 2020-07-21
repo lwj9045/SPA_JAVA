@@ -6,7 +6,7 @@ public class BoardService {
 	Scanner scan = new Scanner(System.in);
 	BoardDTO board = null;
 
-	public void InVal(List<BoardDTO> boardList) {
+	public void InVal(List<BoardDTO> boardList) { // ID초기값 지정
 		board = new BoardDTO();
 		boardList.add(board.getNumber(), board);
 	}
@@ -46,19 +46,18 @@ public class BoardService {
 		}
 	}
 
-	public void Modify(List<BoardDTO> boardList) { // 글 수정
+	public List<BoardDTO> Modify(List<BoardDTO> boardList) { // 글 수정
 		board = new BoardDTO();
 		System.out.print("ID를 입력하세요 : ");
 		board.setId(scan.next());
 		System.out.print("PW를 입력하세요 : ");
 		board.setPw(scan.next());
+		
 		for (int i = 0; i < boardList.size(); i++) {
 			if (board.getId().equals(boardList.get(i).getId())) {
 				if (board.getPw().equals(boardList.get(i).getPw())) {
-					boardList.remove(i);
 					System.out.print("변경할 내용을 입력하세요 : ");
-					board.setContents(scan.next());
-					boardList.add(i, board);
+					boardList.get(i).setContents(scan.next());
 					System.out.println("변경완료.");
 					i = boardList.size();
 				} else {
@@ -66,9 +65,10 @@ public class BoardService {
 				}
 			}
 		}
+		return boardList;
 	}
 
-	public void Delete(List<BoardDTO> boardList) { // 글 삭제
+	public List<BoardDTO> Delete(List<BoardDTO> boardList) { // 글 삭제
 		board = new BoardDTO();
 		System.out.print("ID를 입력하세요 : ");
 		board.setId(scan.next());
@@ -82,7 +82,7 @@ public class BoardService {
 				}
 			}
 		}
-
+		return boardList;
 	}
 
 	public boolean Down() { // 프로그램 종료
