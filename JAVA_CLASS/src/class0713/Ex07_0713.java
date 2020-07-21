@@ -1,0 +1,25 @@
+package class0713;
+
+public class Ex07_0713 {
+
+	public static void main(String[] args) {
+
+		int num[][] = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 },
+				{ 21, 22, 23, 24, 25 } };
+
+		for (int i = 0; i < num.length; i++) {
+			if (i % 2 == 0) {
+				for (int j = 0; j < num[i].length; j++) {
+					System.out.print(num[i][j] + "\t");
+				}
+				System.out.println("");
+			} else if(i%2 ==1){
+				for (int k = num.length-1; k >= 0; k--) {
+					System.out.print(num[i][k] + "\t");
+				}
+			System.out.println("");
+			}
+
+		}
+	}
+}
