@@ -12,7 +12,16 @@ public class BankService {
 		clientList.add(bankData);
 	}
 
-	public void Client(List<BankDTO> clientList) {
+	public boolean Check(List<BankDTO> clientList) {
+		for (int i = 0; i < clientList.size(); i++) {
+			if (bankData.getAccountNumber() == clientList.get(i).getAccountNumber()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public void ClientAdd(List<BankDTO> clientList) {
 		bankData = new BankDTO();
 		System.out.print("성함을 입력하세요 : ");
 		bankData.setName(scan.next());
@@ -23,18 +32,7 @@ public class BankService {
 		System.out.print("계좌에 입금할 금액을 입력하세요 : ");
 		bankData.setMoney(scan.nextInt());
 		bankData.setNumber(clientList.size());
-	}
-
-	public boolean Check(List<BankDTO> clientList) {
-		for (int i = 0; i < clientList.size(); i++) {
-			if (bankData.getAccountNumber() == clientList.get(i).getAccountNumber()) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	public void Add(List<BankDTO> clientList) {
+		
 		if (Check(clientList)) {
 			clientList.add(bankData);
 			System.out.println("등록 완료");

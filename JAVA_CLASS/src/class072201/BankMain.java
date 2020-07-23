@@ -21,8 +21,7 @@ public class BankMain {
 			switch (user_num) {
 
 			case 1:
-				service.Client(clientList);
-				service.Add(clientList);
+				service.ClientAdd(clientList);
 				break;
 
 			case 2:
