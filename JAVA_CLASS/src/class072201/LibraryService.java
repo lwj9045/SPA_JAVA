@@ -8,6 +8,7 @@ public class LibraryService {
 	MemberDTO memberData = null;
 	BookDTO bookData = null;
 
+	//case 1
 	public void AddMember(List<MemberDTO> memberList) {
 		memberData = new MemberDTO();
 
@@ -19,7 +20,8 @@ public class LibraryService {
 		memberList.add(memberData);
 	}
 
-	public void AddBook(List<BookDTO> bookList) {
+	//case 2
+	public List<BookDTO> AddBook(List<BookDTO> bookList) {
 		bookData = new BookDTO();
 
 		System.out.print("도서 명 : ");
@@ -28,9 +30,11 @@ public class LibraryService {
 		bookData.setAuthor(scan.next());
 		bookData.setBooknumber(bookList.size() + 1);
 		bookList.add(bookData);
+		return bookList;
 	}
-
-	public void LendBook(List<BookDTO> bookList, List<MemberDTO> memberList) {
+	
+	//case 3
+	public List<BookDTO> LendBook(List<BookDTO> bookList, List<MemberDTO> memberList) {
 		System.out.print("고객 번호 : ");
 		int memnumber = scan.nextInt();
 		System.out.print("빌릴 책 번호 : ");
@@ -53,8 +57,10 @@ public class LibraryService {
 		} else {
 			System.out.println("등록되지않은 고객입니다.");
 		}
+		return bookList;
 	}
 
+	//case 4
 	public void PrintBook(List<BookDTO> bookList) {
 		for (int i = 0; i < bookList.size(); i++) {
 			System.out.println(bookList.get(i));

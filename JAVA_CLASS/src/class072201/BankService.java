@@ -32,7 +32,7 @@ public class BankService {
 		System.out.print("계좌에 입금할 금액을 입력하세요 : ");
 		bankData.setMoney(scan.nextInt());
 		bankData.setNumber(clientList.size());
-		
+
 		if (Check(clientList)) {
 			clientList.add(bankData);
 			System.out.println("등록 완료");

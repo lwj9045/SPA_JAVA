@@ -27,11 +27,11 @@ public class LibraryMain {
 				break;
 
 			case 2: // 책 등록
-				service.AddBook(bookList);
+				bookList = service.AddBook(bookList);
 				break;
 
 			case 3: // 도서 대출
-				service.LendBook(bookList,memberList);
+				bookList = service.LendBook(bookList,memberList);
 				break;
 
 			case 4: // 도서 목록
