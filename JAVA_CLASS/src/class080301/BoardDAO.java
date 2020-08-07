@@ -72,7 +72,7 @@ public class BoardDAO {
 			System.out.print("제목 : " + rs.getString("BTITLE") + "\t");
 			System.out.print("작성자 : " + rs.getString("BWRITER") + "\t");
 			System.out.print("내용 : " + rs.getString("BCONTENTS") + "\t");
-			System.out.print("작성날짜 : " + rs.getDate("BDATE") + "\t");
+			System.out.print("작성날짜 : "  + rs.getDate("BDATE") + "\t");
 			System.out.print("조회 수 : " + rs.getInt("BHITS") + "\t");
 			System.out.println();
 			}
